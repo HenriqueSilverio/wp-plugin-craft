@@ -1,0 +1,9 @@
+{
+    "name": "henriquesilverio/plugincraft",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "HenriqueSilverio\\PluginCraft\\": "src/"
+      }
+    }
+}
