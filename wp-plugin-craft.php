@@ -1,16 +1,14 @@
 <?php
 
 /**
- * The plugin bootstrap file
+ * The plugin bootstrap file.
  *
  * This file is read by WordPress to generate the plugin information in the plugin
  * dashboard. This file also includes all of the dependencies used by the plugin,
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://henriquesilverio.github.io
- * @since             0.0.1
- * @package           HenriqueSilverio\PluginCraft
+ * @package HenriqueSilverio\PluginCraft
  *
  * @wordpress-plugin
  * Plugin Name:       WP Plugin Craft
@@ -27,10 +25,10 @@
 
 use HenriqueSilverio\PluginCraft;
 
-if ( false === defined( 'ABSPATH' ) ) {
-  header( 'Status: 403 Forbidden' );
-  header( 'HTTP/1.1 403 Forbidden' );
-  die;
+if (false === defined('ABSPATH')) {
+    header('Status: 403 Forbidden');
+    header('HTTP/1.1 403 Forbidden');
+    die;
 }
 
 require_once 'vendor/autoload.php';
@@ -40,4 +38,4 @@ function wp_plugin_craft() {
     $plugin->start();
 }
 
-add_action( 'plugins_loaded', 'wp_plugin_craft' );
+add_action('plugins_loaded', 'wp_plugin_craft');
