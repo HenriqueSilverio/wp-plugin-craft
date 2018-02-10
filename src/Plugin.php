@@ -1,13 +1,28 @@
 <?php
+/**
+ * @todo Add documentation.
+ */
 
 namespace HenriqueSilverio\PluginCraft;
 
+/**
+ * @todo Add documentation.
+ */
 final class Plugin
 {
+    /**
+     * @todo Add documentation.
+     */
     const VERSION = '0.0.1';
 
+    /**
+     * @todo Add documentation.
+     */
     protected static $instance;
 
+    /**
+     * @todo Add documentation.
+     */
     public static function get_instance()
     {
         if (is_null(self::$instance)) {
@@ -17,15 +32,22 @@ final class Plugin
         return self::$instance;
     }
 
+    /**
+     * @todo Add documentation.
+     */
     public function start()
     {
-        add_action('init', [$this, 'load_plugin_textdomain']);
+        add_action('init', [$this, 'load_translation']);
     }
 
-    public function load_plugin_textdomain()
+    /**
+     * @todo Add documentation.
+     * @see load_plugin_textdomain()
+     */
+    public function load_translation()
     {
-        $locale = apply_filters('plugin_locale', get_locale(), 'wp-plugin-craft');
-        load_textdomain('wp-plugin-craft', WP_LANG_DIR . 'wp-plugin-craft/wp-plugin-craft-' . $locale . '.mo');
-        load_plugin_textdomain('wp-plugin-craft', false, dirname(dirname(plugin_basename(__FILE__))) . '/languages');
+        $path = dirname(dirname(plugin_basename(__FILE__))) . '/languages';
+
+        load_plugin_textdomain('wp-plugin-craft', false, $path);
     }
 }
