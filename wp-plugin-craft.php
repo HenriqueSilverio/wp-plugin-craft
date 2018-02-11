@@ -25,28 +25,19 @@
 use HenriqueSilverio\PluginCraft;
 
 /**
- * @todo Add documentation.
+ * Prevents direct file access.
  */
 if (false === defined('ABSPATH')) {
     header('Status: 403 Forbidden');
     header('HTTP/1.1 403 Forbidden');
-    die;
+    die();
 }
 
-/**
- * @todo Add documentation.
- */
+/** Requires the classes autoloader. */
 require_once 'vendor/autoload.php';
 
-/**
- * @todo Add documentation.
- */
-function wp_plugin_craft() {
-    $plugin = PluginCraft\Plugin::get_instance();
-    $plugin->start();
-}
+/** Gets the main plugin instance. */
+$plugin = PluginCraft\Plugin::get_instance();
 
-/**
- * @todo Add documentation.
- */
-add_action('plugins_loaded', 'wp_plugin_craft');
+/** Starts the plugin with WordPress loading process. */
+add_action('plugins_loaded', [$plugin, 'start']);
