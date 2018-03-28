@@ -13,7 +13,7 @@ final class Plugin
     /**
      * @todo Add documentation.
      */
-    const VERSION = '0.0.1';
+    const VERSION = '1.0.0';
 
     /**
      * @todo Add documentation.
@@ -36,18 +36,5 @@ final class Plugin
      * @todo Add documentation.
      */
     public function start()
-    {
-        add_action('init', [$this, 'load_translation']);
-    }
-
-    /**
-     * @todo Add documentation.
-     * @see load_plugin_textdomain()
-     */
-    public function load_translation()
-    {
-        $path = dirname(dirname(plugin_basename(__FILE__))) . '/languages';
-
-        load_plugin_textdomain('wp-plugin-craft', false, $path);
-    }
+    {}
 }

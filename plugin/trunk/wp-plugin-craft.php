@@ -11,11 +11,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       WP Plugin Craft
- * Plugin URI:        https://henriquesilverio.github.io
+ * Plugin URI:        https://github.com/HenriqueSilverio/wp-plugin-craft
  * Description:       WordPress Plugin Boilerplate with PSR-4 Autoloading.
- * Version:           0.0.1
+ * Version:           1.0.0
  * Author:            Henrique Silvério
- * Author URI:        https://henriquesilverio.github.io
+ * Author URI:        https://henriquesilverio.com.br
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       wp-plugin-craft
