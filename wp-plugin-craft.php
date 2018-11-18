@@ -37,7 +37,7 @@ if (false === defined('ABSPATH')) {
 require_once 'vendor/autoload.php';
 
 /** Gets the main plugin instance. */
-$plugin = PluginCraft\Plugin::get_instance();
+$plugin = PluginCraft\Plugin::getInstance();
 
 /** Starts the plugin with WordPress loading process. */
 add_action('plugins_loaded', [$plugin, 'start']);

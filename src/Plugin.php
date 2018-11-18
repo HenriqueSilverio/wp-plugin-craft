@@ -23,7 +23,7 @@ final class Plugin
     /**
      * @todo Add documentation.
      */
-    public static function get_instance()
+    public static function getInstance()
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
@@ -37,14 +37,13 @@ final class Plugin
      */
     public function start()
     {
-        add_action('init', [$this, 'load_translation']);
+        add_action('init', [$this, 'loadTranslation']);
     }
 
     /**
      * @todo Add documentation.
-     * @see load_plugin_textdomain()
      */
-    public function load_translation()
+    public function loadTranslation()
     {
         $path = dirname(dirname(plugin_basename(__FILE__))) . '/languages';
 
